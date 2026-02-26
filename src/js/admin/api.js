@@ -1,10 +1,4 @@
-const BASE =
-  import.meta.env.VITE_API_BASE ||
-  (import.meta.env.DEV ? 'http://localhost:5050/api' : '');
-
-if (!BASE) {
-  throw new Error('VITE_API_BASE is not set for production build');
-}
+const BASE = 'https://back-dofamine.onrender.com/api';
 const BASE_PATH = import.meta.env.BASE_URL;
 
 export function getToken() {
