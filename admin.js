@@ -1,4 +1,4 @@
-import{g as h,c as w,a as s}from"./assets/api-Dpjdcpnw.js";const c="/new-dofamine/";h()||(window.location.href=`${c}login.html`);const l=document.querySelector("#productsList"),t=document.querySelector("#createForm"),y=document.querySelector("#logoutBtn");y.addEventListener("click",()=>{w(),window.location.href=`${c}login.html`});async function i(){const o=await s("/products");l.innerHTML="",o.forEach(e=>{const n=document.createElement("li");n.innerHTML=`
+import{g as h,c as w,a as s}from"./assets/api-CERUV-tc.js";const c="/new-dofamine/";h()||(window.location.href=`${c}login.html`);const l=document.querySelector("#productsList"),t=document.querySelector("#createForm"),y=document.querySelector("#logoutBtn");y.addEventListener("click",()=>{w(),window.location.href=`${c}login.html`});async function i(){const o=await s("/products");l.innerHTML="",o.forEach(e=>{const n=document.createElement("li");n.innerHTML=`
       <b>${e.name}</b>
       ${e.badge?` — <span>${e.badge}</span>`:""}
       <button data-del="${e.id}">Удалить</button>
