@@ -1,9 +1,8 @@
-
-
-window.location.href = `${BASE_PATH}login.html`;
 import { apiFetch, clearToken, getToken } from './api.js';
 
-if (!getToken()) window.location.href = '/login.html';
+const BASE_PATH = import.meta.env.BASE_URL;
+
+if (!getToken()) window.location.href = `${BASE_PATH}login.html`;
 
 const listEl = document.querySelector('#productsList');
 const createForm = document.querySelector('#createForm');
@@ -11,23 +10,20 @@ const logoutBtn = document.querySelector('#logoutBtn');
 
 logoutBtn.addEventListener('click', () => {
   clearToken();
-  window.location.href = '/login.html';
+  window.location.href = `${BASE_PATH}login.html`;
 });
 
 async function loadProducts() {
   const products = await apiFetch('/products');
-
   listEl.innerHTML = '';
 
   products.forEach((p) => {
     const li = document.createElement('li');
-
     li.innerHTML = `
       <b>${p.name}</b>
       ${p.badge ? ` — <span>${p.badge}</span>` : ''}
       <button data-del="${p.id}">Удалить</button>
     `;
-
     listEl.appendChild(li);
   });
 }
@@ -48,7 +44,6 @@ createForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const name = createForm.name.value.trim();
-
   const badge = createForm.badge.value.trim() || null;
   const geos = createForm.geos.value.trim() || null;
   const button_text = createForm.button_text.value.trim() || 'Купить';
@@ -85,8 +80,6 @@ createForm.addEventListener('submit', async (e) => {
     });
 
     createForm.reset();
-
-    // значения по умолчанию после reset
     createForm.button_text.value = 'Купить';
     createForm.button_link.value = 'https://t.me/tmlfarm';
 

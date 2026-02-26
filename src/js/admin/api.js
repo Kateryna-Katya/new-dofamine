@@ -1,4 +1,5 @@
 const BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5050/api';
+const BASE_PATH = import.meta.env.BASE_URL;
 
 export function getToken() {
   return localStorage.getItem('token');
@@ -28,10 +29,10 @@ export async function apiFetch(path, options = {}) {
 
   const res = await fetch(`${BASE}${path}`, { ...options, headers });
 
-  // если токен умер → на логин
+  // если токен умер → на логин (GitHub Pages-safe)
   if (res.status === 401) {
     clearToken();
-    window.location.href = '/login.html';
+    window.location.href = `${BASE_PATH}login.html`;
     return;
   }
 
@@ -43,4 +44,5 @@ export async function apiFetch(path, options = {}) {
 
   return data;
 }
+
 export { BASE };

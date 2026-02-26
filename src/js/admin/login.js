@@ -1,9 +1,11 @@
-const BASE_PATH = import.meta.env.BASE_URL;
-
-window.location.href = `${BASE_PATH}login.html`;
 import { apiFetch, setToken, getToken } from './api.js';
 
-if (getToken()) window.location.href = '/admin.html';
+const BASE_PATH = import.meta.env.BASE_URL;
+
+// если уже залогинен → сразу в админку
+if (getToken()) {
+  window.location.href = `${BASE_PATH}admin.html`;
+}
 
 const form = document.querySelector('#loginForm');
 const errorEl = document.querySelector('#loginError');
@@ -22,7 +24,10 @@ form.addEventListener('submit', async (e) => {
     });
 
     setToken(data.token);
-    window.location.href = '/admin.html';
+
+    // редирект после логина
+    window.location.href = `${BASE_PATH}admin.html`;
+
   } catch (err) {
     errorEl.textContent = err.message;
   }
