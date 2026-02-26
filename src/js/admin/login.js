@@ -1,3 +1,6 @@
+const BASE_PATH = import.meta.env.BASE_URL;
+
+window.location.href = `${BASE_PATH}login.html`;
 import { apiFetch, setToken, getToken } from './api.js';
 
 if (getToken()) window.location.href = '/admin.html';
