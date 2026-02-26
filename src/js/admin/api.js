@@ -46,4 +46,3 @@ export async function apiFetch(path, options = {}) {
 }
 
 export { BASE };
-console.log('API BASE:', BASE);
