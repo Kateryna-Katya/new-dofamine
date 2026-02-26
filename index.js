@@ -1,4 +1,4 @@
-import{B as f}from"./assets/api-CoXq_vlB.js";document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector(".menu-button"),s=t.querySelector(".icon"),c=document.querySelector(".modal"),u=document.querySelectorAll(".menu-list-item"),i=document.querySelector(".header");let n=!1;const a=`
+import{B as f}from"./assets/api-CVtpO-kk.js";document.addEventListener("DOMContentLoaded",()=>{const t=document.querySelector(".menu-button"),s=t.querySelector(".icon"),c=document.querySelector(".modal"),u=document.querySelectorAll(".menu-list-item"),i=document.querySelector(".header");let n=!1;const a=`
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="0.5" y="0.5" width="23" height="23" rx="3.5" stroke="#a855f7" />
         

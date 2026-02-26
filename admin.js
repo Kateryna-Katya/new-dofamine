@@ -1,4 +1,4 @@
-import{g,c as h,a as s}from"./assets/api-CoXq_vlB.js";g()||(window.location.href="/login.html");const l=document.querySelector("#productsList"),t=document.querySelector("#createForm"),y=document.querySelector("#logoutBtn");y.addEventListener("click",()=>{h(),window.location.href="/login.html"});async function i(){const o=await s("/products");l.innerHTML="",o.forEach(e=>{const n=document.createElement("li");n.innerHTML=`
+import{g,c as h,a as s}from"./assets/api-CVtpO-kk.js";g()||(window.location.href="/login.html");const l=document.querySelector("#productsList"),t=document.querySelector("#createForm"),y=document.querySelector("#logoutBtn");y.addEventListener("click",()=>{h(),window.location.href="/login.html"});async function i(){const o=await s("/products");l.innerHTML="",o.forEach(e=>{const n=document.createElement("li");n.innerHTML=`
       <b>${e.name}</b>
       ${e.badge?` — <span>${e.badge}</span>`:""}
       <button data-del="${e.id}">Удалить</button>
